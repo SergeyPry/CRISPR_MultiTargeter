@@ -1,0 +1,2 @@
+Ohnolog pairs with common target sites	Sites with mismatches	Sites without mismatches	Sites in the sense strand	Sites in the anti-sense strand	
+0.382	0.439	0.561	0.571	0.429	
