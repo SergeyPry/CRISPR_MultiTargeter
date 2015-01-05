@@ -15,10 +15,11 @@ The output from this step are two files: **total_unique_sites.txt** and **detail
 
 The proportions of "Genes with isoform-specific sgRNA sites", "Transcripts with isoform-specific sgRNA sites", "Sites in the sense strand", "Sites in the anti-sense strand" were calculated based on the **detailed_unique_sites.txt** file in Excel and the resulting values were pasted into the **Figure4A.R** R script.
 
-**Figure4A.R** script was run to produce the plot in Figure 4A.
+**Figure4A.R** script was run to produce the plot in Figure 4A. Please see the Figure 4 included in this repository.
 
 #### Step 4. Plotting the distribution of unique sgRNA counts in alternative transcripts for the Figure 4B.
 
+**Figure4B.R** script was run with the **total_unique_sites.txt** file to produce the plot in Figure 4B. Please see the Figure 4 included in this repository.
 
 
 
