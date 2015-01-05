@@ -1,6 +1,6 @@
 # This script is necessary to generate data for the Figure4
 
-# Figure4 - part A:
+# Figure5 - part A:
 
 # 1. Proportion of ohnolog pairs with identifiable common target sites.
 # 2. Proportion of sites with mismatches.
@@ -13,7 +13,7 @@
 # 4,5 need to be calculated based on the counts file
 
 
-# Figure4 - part B:
+# Figure5 - part B:
 
 #  histogram of total counts of common target sites. This should be based on the "counts" file 
 #  of common target sites.

@@ -235,7 +235,7 @@ mol_type = "ensgenes"
 # for subsequent analysis
 ############################################
 
-read_fh = open("ohnologues_pairs_output.txt", 'r')
+read_fh = open("ohnologs_pairs_output.txt", 'r')
 
 # create a dictionary
 gene_pairs = {}
@@ -276,7 +276,7 @@ seqs_exons = {}
 results = {}
 
 # 1. establish a database connection
-conn = db.connect('genomes.db')
+conn = db.connect('zebrafish.db')
 cur = conn.cursor()
 
 # iterate the whole algorithm over all available gene pairs

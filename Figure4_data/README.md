@@ -4,9 +4,10 @@
 
 This step makes a list of all alternative transcripts in zebrafish together with their corresponding genes based on the data available in Ensembl BioMart database. The **genes_selecter.py** script when run on **zebrafish_transcript_table.txt** accomplishes this task and produces **genes_with_alternative_transcripts.txt** file as output. However, Github has restrictions on the file sizes so the entire file was not possible to upload. We therefore opted to include **zebrafish_transcript_table_example.txt** file which has a similar structure. The complete file can be generated using BioMart.
 
-#### Step 2. Finding the sites in alternative transcripts and counting them.
+#### Step 2. Finding unique sites in alternative transcripts and counting them.
 
-For this step you need to run **transcripts_cmdline.py** on the **zebrafish.db** SQLite3 database using the **genes_with_alternative_transcripts.txt** file as input. The database was too big to include into this repository but its construction is described in the [Database construction section](https://github.com/SergeyPry/CRISPR_MultiTargeter/tree/master/database_construction).
+For this step you need to run **transcripts_cmdline.py** on the **zebrafish.db** SQLite3 database using the **genes_with_alternative_transcripts.txt** file as input. The database was too big to include into this repository but its construction is described in the [Database construction section](https://github.com/SergeyPry/CRISPR_MultiTargeter/tree/master/database_construction). This script is designed to run on Windows using the Windows version of the ClustalW2 executable program. To run it, you will need to install ClustalW2 and configure the **clustalw_exe** variable, for example:
+clustalw_exe = r"C:\\Program Files\\ClustalW2\\clustalw2.exe".
 
 The output from this step are two files: **total_unique_sites.txt** and **detailed_unique_sites.txt**. The **total_unique_sites.txt** contains total counts of unique CRISPR/Cas9 sgRNA sites for all alternative transcripts analyzed in this workflow. The **detailed_unique_sites.txt** file contains the gene and transcript Ensemble identifiers of these alternative transcripts as well as counts of unique sgRNA sites in both sense and anti-sense strands of these transcripts, for example
 **ENSDARG00000091715	ENSDART00000152509	14	6**.
