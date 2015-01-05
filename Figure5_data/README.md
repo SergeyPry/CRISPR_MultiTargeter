@@ -10,8 +10,11 @@ For this step you need to run **multigene_search_cmdline.py** on the **zebrafish
 clustalw_exe = r"C:\\Program Files\\ClustalW2\\clustalw2.exe".
 
 The output from this step are two files: **ohnolog_target_sites_counts.txt** and **ohnolog_target_sites_details.txt**. The **ohnolog_target_sites_counts.txt** contains the Ensemble identifiers of both ohnologs in a pair as well as counts of common sgRNA sites in both sense and anti-sense strands of these genes, for example:
+
 **ENSDARG00000071685	ENSDARG00000086104	4	4**. 
+
 The **ohnolog_target_sites_details.txt** file contains Ensemble identifiers of both ohnologs in a pair, sgRNA target site sequence in the alignment consensus, the computed sgRNA sequence and target site sequences in both genes in a pair, for example:
+
 **ENSDARG00000034203	ENSDARG00000094610	forward	CGCCGTGTCTGAGGGTACAA	CGCCGTGTCTGAGGGTACAA	CGCCGTGTCTGAGGGTACAA	CGCCGTGTCTGAGGGTACAA**
 
 #### Step 3. Generating data for common sgRNA target sites overall statistics and making the Figure 5A plot.
