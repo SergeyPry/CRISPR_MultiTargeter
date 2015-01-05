@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>http://multicrispr.net/</loc>
+  <lastmod>2015-01-05T18:30:52+00:00</lastmod>
+</url>
+<url>
+  <loc>http://multicrispr.net/index.html</loc>
+  <lastmod>2015-01-05T18:30:52+00:00</lastmod>
+</url>
+<url>
+  <loc>http://multicrispr.net/basic_input.html</loc>
+  <lastmod>2015-01-05T18:09:26+00:00</lastmod>
+</url>
+<url>
+  <loc>http://multicrispr.net/multalign_input.html</loc>
+  <lastmod>2015-01-05T18:10:51+00:00</lastmod>
+</url>
+<url>
+  <loc>http://multicrispr.net/multigene_input.html</loc>
+  <lastmod>2015-01-05T18:20:14+00:00</lastmod>
+</url>
+<url>
+  <loc>http://multicrispr.net/transcripts.html</loc>
+  <lastmod>2015-01-05T18:22:09+00:00</lastmod>
+</url>
+<url>
+  <loc>http://multicrispr.net/basic_input_demo1.html</loc>
+  <lastmod>2015-01-05T18:09:46+00:00</lastmod>
+</url>
+<url>
+  <loc>http://multicrispr.net/basic_input_demo2.html</loc>
+  <lastmod>2015-01-05T18:10:08+00:00</lastmod>
+</url>
+<url>
+  <loc>http://multicrispr.net/multalign_input_demo.html</loc>
+  <lastmod>2015-01-05T18:11:11+00:00</lastmod>
+</url>
+<url>
+  <loc>http://multicrispr.net/multigene_input_demo.html</loc>
+  <lastmod>2015-01-05T18:11:57+00:00</lastmod>
+</url>
+<url>
+  <loc>http://multicrispr.net/transcripts_demo.html</loc>
+  <lastmod>2015-01-05T18:28:32+00:00</lastmod>
+</url>
+</urlset>

@@ -1,4 +1,4 @@
-Counts
+Frequency
 5
 2
 3

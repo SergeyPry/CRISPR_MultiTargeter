@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Find common and unique CRISPR guide RNA targets for similar genes or transcripts</title>
+
+<link href="style.css" media="screen" rel="Stylesheet" type="text/css">
+<script type="text/javascript" src="view.js"></script>
+
+</head>
+<body id="main_body">
+
+<div id="everything">
+    <div id="masthead">
+        <div id="masthead-inner-front">          
+			<div class="title">
+                <a href="./index.html"> <img src="CRISPR Targeter.jpg" style="width: 120px; height: 70px; vertical-align: middle;" border="0"> CRISPR MultiTargeter</a>
+            </div>
+        </div>
+    </div>
+  
+
+
+	<div id="form_container">
+	
+		<form id="form_764484" class="appnitro"  method="post" action="../cgi-bin/multigene_search.py">
+		<div class="form_description">
+		<br />
+		<h2>Search for common and unique CRISPR guide RNA targets in similar genes or transcripts</h2>
+		<hr style="height:3px;border-width:4;color:gray;background-color:gray">
+		</div>						
+		
+		<ul >
+			
+			<li>
+			<label class="description" for="element_3">5' dinucleotide </label>
+			
+				<select class="element select small" id="5dinuc" name="5dinuc"> 
+					<option value="NN" selected="selected" >NN</option>
+					<option value="GN" >GN</option>
+					<option value="GG" >GG</option>
+				</select>
+			
+			</li>		
+		
+			<li>
+			
+			<label class="description" for="element_4">Target length</label>
+			<input id="target_length" name="target_length" class="element text small" type="text" maxlength="255" value="20"/> 
+		
+			</li>		
+
+			<li>
+			<label class="description" for="element_5">PAM sequence orientation</label>
+			<span>
+				<input id="PAM" name="oriented" class="element radio" type="radio" value="5" />
+				<label class="choice" for="element_5_1">5'</label>
+			
+				<input id="PAM" name="oriented" class="element radio" type="radio" value="3" checked />
+				<label class="choice" for="element_5_2">3'</label>
+			</span> 
+			</li>			
+
+			<li>
+			<label class="description" for="element_5">Allow a mismatch in the first 8 nucleotides?</label>
+			<span>
+				<input name="mismatch" class="element radio" type="radio" value="Yes" checked/>
+				<label class="choice" for="element_5_1">Yes</label>
+			
+				<input name="mismatch" class="element radio" type="radio" value="No" />
+				<label class="choice" for="element_5_2">No</label>
+			</span> 
+			</li>	
+
+			
+			<li>
+			<label class="description" for="element_6">PAM sequence </label>
+			<span>
+				<input id="PAM" name="PAM" class="element radio" type="radio" value="1" checked />
+				<label class="choice" for="element_6_1">NGG (scoring is available*)</label>
+
+				<input id="PAM" name="PAM" class="element radio" type="radio" value="2" />
+				
+                                <label class="choice" for="element_1">Your own PAM sequence </label>
+			        <input id="PAM_seq" name="PAM_seq" class="element text medium" type="text" maxlength="255" value=""/> 
+                                
+			</span> 
+			</li>		
+			        <p>*<font style='color: red'>Scoring is available for 20-nt type II sgRNAs.</font> <font style='color: #891075'>See <a href =      
+                                 "http://www.ncbi.nlm.nih.gov/pubmed/25184501">Doench et al., 2014</a> for details.</font>
+                                 High scores may indicate more potent sgRNAs. However, some potent sgRNAs have scores < 0.1 and a number of successful sgRNAs had scores between 0.1 and 0.2.
+                                 Therefore, potential experimental utility and subsequent experimental verification should guide the choice of sgRNAs.</p>
+
+                                <p><font style='color: red'>Off-target analysis parameters:</font> <br /><strong><a href="http://gt-scan.braembl.org.au/gt-scan/submit">GT-Scan<a>: </strong> <font style='color: #891075'>No                   restrictions on PAM sequence or target length. Adjust the target rule on the submission form.</font><br /><strong><a href="http://www.rgenome.net/cas-offinder/">Cas-OFFinder<a>: </strong> <font style='color: #891075'>Length should be 20bp for SpCas9 (PAM = 'NGG'), 18bp for StCas9 (PAM = 'NNAGAAW'), and 24bp for NmCas9 (PAM = 'NNNNGMTT').</font></p>
+	
+					
+			<li id="li_7" >
+			<label class="description" for="element_7">Organism (species name)</label>
+			
+				<select class="element select small" id="species" name="species">
+					<option value="default" selected="selected">Select the option</option>
+					<option value="Homo sapiens">Homo sapiens</option>
+					<option value="Mus musculus">Mus musculus</option>
+					<option value="Rattus norvegicus">Rattus norvegicus</option>
+					<option value="Gallus gallus">Gallus gallus</option>
+					<option value="Xenopus tropicalis">Xenopus tropicalis</option>
+					<option value="Danio rerio">Danio rerio</option>
+					<option value="Oryzias latipes">Oryzias latipes</option>
+					<option value="Drosophila melanogaster">Drosophila melanogaster</option>
+					<option value="Caenorhabditis elegans">Caenorhabditis elegans</option>
+					<option value="Arabidopsis thaliana">Arabidopsis thaliana</option>
+					<option value="Oriza sativa japonica">Oryza sativa japonica</option>
+					<option value="Zea mays">Zea mays</option>
+				</select>				
+			</li>		
+			
+			<li>
+			<label class="description" for="element_6">Type of molecules</label>
+			<span>
+				<input id="moltype" name="moltype" class="element radio" type="radio" value="genes" checked />
+				<label class="choice" for="element_6_1">Gene symbols</label>
+				
+				<input id="moltype" name="moltype" class="element radio" type="radio" value="ensgenes" />
+				<label class="choice" for="element_6_1">Ensembl Gene IDs</label>
+			
+				<input id="moltype" name="moltype" class="element radio" type="radio" value="transcripts" />
+				<label class="choice" for="element_6_2">Ensembl Transcripts</label>
+				
+				<input id="moltype" name="moltype" class="element radio" type="radio" value="refseq" />
+				<label class="choice" for="element_6_2">Refseq sequences*</label>
+
+                                <p>*<font style='color: red'>Refseq sequences can be from any species</font></p>
+			</span> 
+			</li>	
+
+			<li>
+			<label class="description" for="element_8">Input gene or transcript identifiers*</label>
+			
+				<textarea id="input_seq" name="input_seq" class="element textarea small"></textarea> 
+				<p>*The program supports Ensembl gene and transcript identifiers, gene symbols as well as Refseq cDNA accession numbers (if available).
+				Small number of identifiers (2-3) is most suitable for this application unless similarity is expected to be high.</p>
+		 
+			</li>
+
+                        <p style='color: #891075'><strong><a href="http://multicrispr.net/multigene_input_demo.html">Demo input</a></strong></p>
+		
+			<li class="buttons">
+					<input id="saveForm" class="button_text" type="submit" name="submit" value="Submit" />
+			</li>
+		</ul>
+	</form>
+</div>
+	<div id="detailed_text">
+    <div id="acks">
+      <p> CRISPR MultiTargeter was developed by Sergey Prykhozhij at the IWK Health Centre and Dalhousie University. The design of the logo and the buttons was by Vinothkumar Rajan. The latest update was on the 5th of January 2015.
+    </p></div>
+  </div>
+
+
+	</div>
+</body>
+</html>

@@ -2,13 +2,17 @@
 
 #### Step 1. Generating all possible ohnolog gene pairs in zebrafish.
 
+To make the file containing all possible ohnolog pairs, the user needs to run the **ohnolog_pair_generator.py** script on **ohnologues_pairs_zebrafish_E63.txt** input file, where many ohnolog relationships are represented as one-to-many or many-many pairings because of the uncertainty in orthology relationships. The output of this script is **ohnologs_pairs_output.txt** file.
+
 #### Step 2. Finding common sites in pairs of ohnologs and counting them.
 
 For this step you need to run **multigene_search_cmdline.py** on the **zebrafish.db** SQLite3 database using the **ohnologs_pairs_output.txt** file as input. The database was too big to include into this repository but its construction is described in the [Database construction section](https://github.com/SergeyPry/CRISPR_MultiTargeter/tree/master/database_construction). This script is designed to run on Windows using the Windows version of the ClustalW2 executable program. To run it, you will need to install ClustalW2 and configure the **clustalw_exe** variable, for example:
 clustalw_exe = r"C:\\Program Files\\ClustalW2\\clustalw2.exe".
 
-The output from this step are two files: **ohnologs_total_sites.txt** and **ohnolog_target_sites_details.txt**. The **ohnologs_total_sites.txt** contains total counts of common CRISPR/Cas9 sgRNA sites for all ohnolog pairs analyzed in this workflow. The **ohnolog_target_sites_details.txt** file contains the Ensemble identifiers of both ohnologs in a pair as well as counts of common sgRNA sites in both sense and anti-sense strands of these genes, for example
-**ENSDARG00000071685	ENSDARG00000086104	4	4**.
+The output from this step are two files: **ohnolog_target_sites_counts.txt** and **ohnolog_target_sites_details.txt**. The **ohnolog_target_sites_counts.txt** contains the Ensemble identifiers of both ohnologs in a pair as well as counts of common sgRNA sites in both sense and anti-sense strands of these genes, for example:
+**ENSDARG00000071685	ENSDARG00000086104	4	4**. 
+The **ohnolog_target_sites_details.txt** file contains Ensemble identifiers of both ohnologs in a pair, sgRNA target site sequence in the alignment consensus, the computed sgRNA sequence and target site sequences in both genes in a pair, for example:
+**ENSDARG00000034203	ENSDARG00000094610	forward	CGCCGTGTCTGAGGGTACAA	CGCCGTGTCTGAGGGTACAA	CGCCGTGTCTGAGGGTACAA	CGCCGTGTCTGAGGGTACAA**
 
 #### Step 3. Generating data for common sgRNA target sites overall statistics and making the Figure 5A plot.
 
@@ -18,3 +22,5 @@ The proportions of "Ohnolog pairs with common target sites", "Sites with mismatc
 
 
 #### Step 4. Plotting the distribution of common sgRNA counts in ohnolog pairs for the Figure 5B.
+
+The **ohnolog_summarizer.py** script was also run with the **ohnolog_target_sites_counts.txt** file to generate **ohnologs_total_sites.txt** file. This file was used as input for **Figure5B.R** script, which produces the Figure 5B plot. Please see the Figure 5 included in this repository.
