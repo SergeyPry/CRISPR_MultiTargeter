@@ -6,7 +6,7 @@ This step makes a list of all alternative transcripts in zebrafish together with
 
 #### Step 2. Finding the sites in alternative transcripts and counting them.
 
-For this step you need to run **transcripts_cmdline.py** on the **zebrafish.db** SQLite3 database using the **genes_with_alternative_transcripts.txt** file as input.
+For this step you need to run **transcripts_cmdline.py** on the **zebrafish.db** SQLite3 database using the **genes_with_alternative_transcripts.txt** file as input. The database was too big to include into this repository but its construction is described in the [Database construction section](https://github.com/SergeyPry/CRISPR_MultiTargeter/tree/master/database_construction).
 
 The output from this step are two files: **total_unique_sites.txt** and **detailed_unique_sites.txt**. The **total_unique_sites.txt** contains total counts of unique CRISPR/Cas9 sgRNA sites for all alternative transcripts analyzed in this workflow. The **detailed_unique_sites.txt** file contains the gene and transcript Ensemble identifiers of these alternative transcripts as well as counts of unique sgRNA sites in both sense and anti-sense strands of these transcripts, for example
 **ENSDARG00000091715	ENSDART00000152509	14	6**.
