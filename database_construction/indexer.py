@@ -22,9 +22,5 @@ cur.execute("CREATE INDEX gene_ids on Genes (geneid)")
 # index transcriptID column in the Transcripts table
 cur.execute("CREATE INDEX trid_Transcripts on Transcripts (transcriptID)")
 
-# index geneid column in the Genes table
-cur.execute("CREATE INDEX refseq_ids on Refseq (refseqid)")
-
-
 conn.commit()
 conn.close()
