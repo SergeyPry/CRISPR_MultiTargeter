@@ -60,13 +60,14 @@ conn.commit()
 
 For inserting exon information, the user needs to run two scripts:
 
+The following script requires a file such as "example_zebrafish_exon_table.txt".
+It will insert main data on exons: ExonID, EnsemblGeneID, sequence, strand and chromosome coordinates.
 ```python
-## the following script requires a file such as "example_zebrafish_exon_table.txt"
-## it will insert main data on exons: ExonID, EnsemblGeneID, sequence, strand and chromosome coordinates
 python insert_exons.py
+```
 
-## the following script requires a file such as "example_zebrafish_gene-exon_table.txt"
-## it will insert only the coordinates of an exon inside a merged gene model
+The next script requires a file such as "example_zebrafish_gene-exon_table.txt". It will insert only the coordinates of an exon inside a merged gene model.
+```python
 python insert_exon_coords.py
 ```
 
