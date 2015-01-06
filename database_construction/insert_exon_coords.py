@@ -2,7 +2,7 @@
 # of genomes database
 import os
 import sqlite3 as db
-
+ 
 
 # obtain all the files from a directory matching a certain naming scheme
 # assign these filenames to the corresponding variables

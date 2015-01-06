@@ -1,7 +1,7 @@
 # The purpose of this script is to insert the data into the tables
 # of genomes database
 import os
-import sqlite3 as db
+import sqlite3 as db 
 
 
 # obtain all the files from a directory matching a certain naming scheme
