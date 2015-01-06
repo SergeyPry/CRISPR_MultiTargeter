@@ -2834,7 +2834,8 @@ def compute_output_unique_targets(sequences, sgRNA_regex):
 			""" %(id_count, seq_id, id_count)
 			id_count += 1
 			
-
+			# a dictionary to store information on the sgRNA targets for the current sequence
+			current_sequence = {}
 			
 			# move over the unique_targets dictionary and other relevant data and 
 			# produce the dictionary compatible with the original highlight_targets_output function
@@ -2844,7 +2845,14 @@ def compute_output_unique_targets(sequences, sgRNA_regex):
 			unique_targets_sequences[seq_id]["rc_sequence"] = seq_matches[seq_id]["rc_sequence"]
 			unique_targets_sequences[seq_id]["direct_targets"] = {}
 			unique_targets_sequences[seq_id]["reverse_targets"] = {}
-			
+
+			# initialize and update the current_sequence dictionary
+			current_sequence[seq_id] = {}
+			current_sequence[seq_id]["sequence"] = seq_matches[seq_id]["sequence"]
+			current_sequence[seq_id]["rc_sequence"] = seq_matches[seq_id]["rc_sequence"]
+			current_sequence[seq_id]["direct_targets"] = {}
+			current_sequence[seq_id]["reverse_targets"] = {}
+			 
 			
 			for targ_id in unique_targets[seq_id].keys():
 				# check the orientation of each target and populate the corresponding dictionary of unique_targets_sequences
@@ -2853,15 +2861,27 @@ def compute_output_unique_targets(sequences, sgRNA_regex):
 					unique_targets_sequences[seq_id]["direct_targets"][targ_id] = {}
 					unique_targets_sequences[seq_id]["direct_targets"][targ_id]["target_seq"] = unique_targets[seq_id][targ_id]["sequence"]
 					unique_targets_sequences[seq_id]["direct_targets"][targ_id]["coord_target"] = unique_targets[seq_id][targ_id]["coordinates"]
-						
+
+					current_sequence[seq_id]["direct_targets"][targ_id] = {}
+					current_sequence[seq_id]["direct_targets"][targ_id]["target_seq"] = unique_targets[seq_id][targ_id]["sequence"]
+					current_sequence[seq_id]["direct_targets"][targ_id]["coord_target"] = unique_targets[seq_id][targ_id]["coordinates"]					
+
+					
+	
 				elif unique_targets[seq_id][targ_id]["orientation"] == "reverse":
 					unique_targets_sequences[seq_id]["reverse_targets"][targ_id] = {}
 					unique_targets_sequences[seq_id]["reverse_targets"][targ_id]["target_seq"] = unique_targets[seq_id][targ_id]["sequence"]
 					unique_targets_sequences[seq_id]["reverse_targets"][targ_id]["coord_target"] = unique_targets[seq_id][targ_id]["coordinates"]
+
+
+					current_sequence[seq_id]["reverse_targets"][targ_id] = {}
+					current_sequence[seq_id]["reverse_targets"][targ_id]["target_seq"] = unique_targets[seq_id][targ_id]["sequence"]
+					current_sequence[seq_id]["reverse_targets"][targ_id]["coord_target"] = unique_targets[seq_id][targ_id]["coordinates"]
+
 					
 			
 			# print the visual view of the unique targets
-			highlight_targets_single(unique_targets_sequences)
+			highlight_targets_single(current_sequence)
 			
 			
 			# first print the colored heading

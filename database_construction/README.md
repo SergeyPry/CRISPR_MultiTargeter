@@ -1,1 +1,1 @@
-### CRISPR MultiTargeter SQLite3 construction
+### CRISPR MultiTargeter SQLite3 database construction
