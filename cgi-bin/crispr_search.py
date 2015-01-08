@@ -2667,7 +2667,7 @@ if text_input != "":
 			pass
 			badrequest_seq(sequence)
 		
-		sequences["User input"] = sequence
+		sequences["User input"] = sequence.upper()
 
 # test the size of input sequences
 for key in sequences.keys():
